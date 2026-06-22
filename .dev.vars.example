@@ -1,0 +1,4 @@
+# Copy to `.dev.vars` (gitignored) for local `wrangler dev`.
+# Use a PLACEHOLDER here — never commit a real token.
+# The only secret is your Notion internal-integration token.
+NOTION_TOKEN=ntn_PLACEHOLDER_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
