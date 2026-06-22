@@ -1,0 +1,20 @@
+name = "leetcode-notion-sync"
+main = "src/index.ts"
+compatibility_date = "2025-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Poll every 3 minutes (UTC, 5-field cron). Cloudflare minimum interval is 1 minute.
+[triggers]
+crons = ["*/3 * * * *"]
+
+# Non-secret config. NOTION_TOKEN is a SECRET — set it with `wrangler secret put NOTION_TOKEN`.
+[vars]
+LC_USERNAME = "REPLACE_WITH_YOUR_LEETCODE_USERNAME"
+NOTION_PROBLEMS_DB = "REPLACE_WITH_NOTION_PROBLEMS_DATABASE_ID"
+NOTION_STATS_DB = "REPLACE_WITH_NOTION_STATS_DATABASE_ID"
+
+# Create with: wrangler d1 create leetcode-notion-sync   (then paste the printed database_id)
+[[d1_databases]]
+binding = "DB"
+database_name = "leetcode-notion-sync"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
