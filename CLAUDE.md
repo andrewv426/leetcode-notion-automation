@@ -27,6 +27,16 @@ Invariants worth keeping:
 - Solved iff `statusDisplay === "Accepted"`; skip non-terminal submissions.
 - LeetCode `timestamp` is unix **seconds**; dates → `new Date(sec*1000).toISOString()`.
 
+## Git & PR conventions
+
+- **No AI attribution** in commits or PRs — no `Co-Authored-By: Claude…` trailers, no
+  "Generated with…" footers. Write them as a normal contributor.
+- **PR body** — short and intuitive, in this order (drop a section if it's empty):
+  - **Summary** — what changed and why, 1–3 lines.
+  - **Changes** — notable edits at the file/area level (bulleted), not a line-by-line dump.
+  - **Tests** — what was run and the result (`npm test`, typecheck, bundle).
+  - **Risks** — anything risky or needing follow-up.
+
 ## Docs discipline
 
 At the **end of every turn**, evaluate whether the change touched setup, commands, architecture,
